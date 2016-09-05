@@ -25,6 +25,7 @@ var PromptContainer = React.createClass({
       username: ''
     });
 
+//does it mean that query is already inside props
     if(this.props.routeParams.playerOne) {
       this.context.router.push({
         pathname: '/battle',
