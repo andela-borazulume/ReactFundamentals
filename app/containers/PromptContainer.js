@@ -2,22 +2,26 @@ var React = require('react');
 var Prompt = require('../components/Prompt');
 
 var PromptContainer = React.createClass({
+  //Make the routes available in this component
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
 
+  //Initializing by setting state as empty string
   getInitialState: function() {
     return {
       username: ''
     };
   },
 
+//Gets the text from the input
   handleUpdateUser: function(e) {
     this.setState({
       username: e.target.value
     });
   },
 
+//Continue button
   handleSubmitUser: function(e) {
     e.preventDefault();
     var username = this.state.username;
