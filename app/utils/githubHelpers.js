@@ -8,14 +8,13 @@ function getUserInfo(username) {
 }
 
 function getRepos(username) {
-  return axios.get('https://api.github.com/users/' + username +'/repos'+ param
-    + '&per_page=100');
+  return axios.get('https://api.github.com/users/' + username +'/repos'+ param + '&per_page=100');
 }
 
 function getTotlaStars(repos) {
   return repos.data.reduce(function(prev, curr) {
-    return prev + curr.stargazers_count
-  }, 0)
+    return prev + curr.stargazers_count;
+  }, 0);
 }
 
 function getPlayersData(player) {
@@ -25,8 +24,8 @@ function getPlayersData(player) {
       return {
         followers: player.followers,
         totalStars: totalStars
-      }
-    })
+      };
+    });
 
 }
 
@@ -34,7 +33,7 @@ function calculateScores(players) {
   return [
     players[0].followers * 3 + players[0].totalStars,
     players[1].followers * 3 + players[1].totalStars
-  ]
+  ];
 }
 
 var helpers = {
